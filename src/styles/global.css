@@ -20,6 +20,13 @@
   box-shadow: 0 0 0 2px var(--green-500);
 }
 
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
