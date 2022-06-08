@@ -22,6 +22,14 @@ export const Post = ({ author, content, publishedAt }) => {
     setNewComment(e.target.value);
   };
 
+  const handleDeleteComment = commentToDelete => {
+    const commentsWithoutDeletedOne = comments.filter(
+      comment => comment !== commentToDelete,
+    );
+
+    setComments(commentsWithoutDeletedOne);
+  };
+
   const dateFormatted = format(publishedAt, "dd 'de' LLLL 'às' HH:mm'h'", {
     locale: ptBr,
   });
@@ -76,7 +84,11 @@ export const Post = ({ author, content, publishedAt }) => {
 
       <div className={styles.commentsList}>
         {comments.map(comment => (
-          <Comment content={comment} />
+          <Comment
+            key={comment}
+            content={comment}
+            onDeleteComment={() => handleDeleteComment(comment)}
+          />
         ))}
       </div>
     </article>

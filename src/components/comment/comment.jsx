@@ -4,7 +4,7 @@ import { Avatar } from '../avatar';
 
 import styles from './styles.module.css';
 
-export const Comment = ({ content }) => {
+export const Comment = ({ content, onDeleteComment }) => {
   return (
     <div className={styles.comment}>
       <Avatar hasBorder={false} src="https://github.com/MatheusPires99.png" />
@@ -20,7 +20,11 @@ export const Comment = ({ content }) => {
               </time>
             </div>
 
-            <button type="button" title="Deletar comentário">
+            <button
+              type="button"
+              onClick={onDeleteComment}
+              title="Deletar comentário"
+            >
               <Trash size={24} />
             </button>
           </header>
