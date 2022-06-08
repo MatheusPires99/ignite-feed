@@ -4,7 +4,7 @@ import { Avatar } from '../avatar';
 
 import styles from './styles.module.css';
 
-export const Comment = () => {
+export const Comment = ({ content }) => {
   return (
     <div className={styles.comment}>
       <Avatar hasBorder={false} src="https://github.com/MatheusPires99.png" />
@@ -25,7 +25,7 @@ export const Comment = () => {
             </button>
           </header>
 
-          <p>Lorem ipsum dolor sit amet, consectetur adip</p>
+          <p>{content}</p>
         </div>
 
         <footer>
